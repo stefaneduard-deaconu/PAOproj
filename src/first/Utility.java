@@ -8,16 +8,16 @@ public class Utility {
     private String menu;
     public Utility() {
         StringBuilder sb = new StringBuilder(); // prints the list of options
-        sb.append(" 1. \n");
-        sb.append(" 2. \n");
-        sb.append(" 3. \n");
-        sb.append(" 4. \n");
-        sb.append(" 5. \n");
-        sb.append(" 6. \n");
-        sb.append(" 7. \n");
-        sb.append(" 8. \n");
-        sb.append(" 9. \n");
-        sb.append("10. \n");
+        sb.append(" 1. Add a new reader\n");
+        sb.append(" 2. Delete a reader\n");
+        sb.append(" 3. Merge two readers\n");
+        sb.append(" 4. How many readers\n");
+        sb.append(" 5. How many unhelped readers\n");
+        sb.append(" 6. Find\n");
+        sb.append(" 7. Delete TypeWriters\n");
+        sb.append(" 8. Best 3 writers\n");
+        sb.append(" 9. Previous Action\n");
+        sb.append("10. close program (different to exit/quit/stop)\n");
         menu = sb.toString();
     }
     public void start(Object startingObjects) {
