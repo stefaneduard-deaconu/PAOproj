@@ -13,14 +13,14 @@ public class Paper {
 }
 
 class Book extends Paper {
-    String primaryAuthor;
+    private String primaryAuthor;
     public Book(String author) {
         primaryAuthor = new String(author);
     }
 }
 
 class Article extends Paper {
-    String []authors; // I know the intel is Bad, I just want something different inside this class
+    private String []authors; // I know the intel is Bad, I just want something different inside this class
     public Article(String[] auths) { // deep copy
         authors = new String[auths.length];
         for (int i = 0; i < authors.length; i++)
