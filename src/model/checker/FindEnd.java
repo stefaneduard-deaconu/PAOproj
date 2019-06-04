@@ -1,25 +1,29 @@
 package model.checker;
 
 public class FindEnd {
-    Integer id, writerId, end;
+    Integer findEndId, writerId, end;
 
-    public FindEnd(Integer id) {
-        this.id = id;
+    public FindEnd(Integer findEndId) {
+        this.findEndId = findEndId;
     }
 
-    public FindEnd(Integer id, Integer writerId) {
-        this.id = id;
+    public FindEnd(Integer findEndId, Integer writerId) {
+        this.findEndId = findEndId;
         this.writerId = writerId;
     }
-
-
-
-    public Integer getId() {
-        return id;
+    public FindEnd(Integer findEndId, Integer writerId, Integer endLocation) {
+        this.findEndId = findEndId;
+        this.writerId = writerId;
+        end = endLocation;
     }
 
-    public void setId(Integer id) {
-        this.id = id;
+
+    public Integer getFindEndId() {
+        return findEndId;
+    }
+
+    public void setFindEndId(Integer findEndId) {
+        this.findEndId = findEndId;
     }
 
     public Integer getWriterId() {

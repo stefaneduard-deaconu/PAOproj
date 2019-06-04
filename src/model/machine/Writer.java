@@ -1,46 +1,11 @@
 package model.machine;
 
 
-import javafx.fxml.FXMLLoader;
-import javafx.scene.Parent;
-import javafx.scene.Scene;
-import javafx.stage.Stage;
-
 import java.io.IOException;
 
-public class Writer implements Runnable{
+public class Writer{
     Integer writerId, userId, paperId, findEndId;
 
-
-    @Override
-    public void run() {
-        FXMLLoader loader = new FXMLLoader(getClass().getResource("WriterPanel.fxml"));
-        Parent root = null;
-        try {
-            root = (Parent) loader.load();
-        } catch (IOException ioe) {
-            ioe.printStackTrace();
-        } catch (Exception e) {
-            e.printStackTrace();
-        }
-
-
-        Stage writerStage = new Stage();
-        writerStage.setTitle("Writer Panel: " + userId.toString());
-        writerStage.setScene(new Scene(root));
-
-        writerStage.setWidth(800);
-        writerStage.setHeight(600);
-        writerStage.setResizable(false);
-
-
-        writerStage.show();
-        writerStage.centerOnScreen();
-
-        // here i could get a controller as to set up stuff
-
-
-    }
 
     public Writer(Integer id) {
         writerId = id;
@@ -50,8 +15,8 @@ public class Writer implements Runnable{
         this.writerId = readerId;
         this.userId = userId;
     }
-    public Writer(Integer readerId, Integer userId, Integer paperId, Integer findEndId) {
-        this.writerId = readerId;
+    public Writer(Integer writerId, Integer userId, Integer paperId, Integer findEndId) {
+        this.writerId = writerId;
         this.userId = userId;
         this.paperId = paperId;
         this.findEndId = findEndId;

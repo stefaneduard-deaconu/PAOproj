@@ -5,8 +5,8 @@ import java.util.HashMap;
 import java.util.Map;
 
 public class PertainsTo {
-    Integer pertainsToId;
-    Map<Integer, Integer> papermarkToUser;
+    private Integer pertainsToId;
+    private static Map<Integer, Integer> papermarkToUser;
 
     // Singleton
     private static PertainsTo ourInstance = new PertainsTo();
@@ -17,17 +17,22 @@ public class PertainsTo {
         papermarkToUser = new HashMap<>();
     }
 
-    //
+    // getters and setters
     public Integer getPertainsToId() {
         return pertainsToId;
     }
     public void setPertainsToId(Integer pertainsToId) {
         this.pertainsToId = pertainsToId;
     }
-    public Map<Integer, Integer> getPapermarkToUser() {
-        return papermarkToUser;
+
+
+    public static void addRelation(Integer papermarkId, Integer userId) {
+        papermarkToUser.put(papermarkId, userId);
     }
-    public void setPapermarkToUser(Map<Integer, Integer> papermarkToUser) {
-        this.papermarkToUser = papermarkToUser;
+    public static void addRelations(Map<Integer, Integer> papermarkToUserRelations) {
+        papermarkToUser.putAll(papermarkToUserRelations);
+    }
+    public static Map<Integer, Integer> getRelations() {
+        return papermarkToUser;
     }
 }

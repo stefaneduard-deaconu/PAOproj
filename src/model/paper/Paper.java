@@ -1,15 +1,16 @@
 package model.paper;
 
+
 public class Paper {
-    Integer paperId, papermarkId;
+    Integer paperId;
     String text;
 
     public Paper(Integer paperId) {
         this.paperId = paperId;
     }
-    public Paper(Integer paperId, Integer papermarkId) {
+    public Paper(Integer paperId, String textString) {
         this.paperId = paperId;
-        this.papermarkId = papermarkId;
+        this.text = textString;
     }
 
     public Integer getPaperId() {
@@ -20,14 +21,6 @@ public class Paper {
         this.paperId = paperId;
     }
 
-    public Integer getPapermarkId() {
-        return papermarkId;
-    }
-
-    public void setPapermarkId(Integer papermarksId) {
-        this.papermarkId = papermarkId;
-    }
-
     public String getText() {
         return text;
     }
@@ -35,4 +28,6 @@ public class Paper {
     public void setText(String text) {
         this.text = text;
     }
+
+
 }
