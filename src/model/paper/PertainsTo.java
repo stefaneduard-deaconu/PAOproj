@@ -1,36 +1,33 @@
 package model.paper;
 
 
-public class PertainsTo {
-    Integer pertainsToId, userId, paperId;
+import java.util.HashMap;
+import java.util.Map;
 
-    public PertainsTo(Integer pertainsToId, Integer userId, Integer paperId) {
-        this.pertainsToId = pertainsToId;
-        this.userId = userId;
-        this.paperId = paperId;
+public class PertainsTo {
+    Integer pertainsToId;
+    Map<Integer, Integer> papermarkToUser;
+
+    // Singleton
+    private static PertainsTo ourInstance = new PertainsTo();
+    public static PertainsTo getInstance() {
+        return ourInstance;
+    }
+    private PertainsTo() {
+        papermarkToUser = new HashMap<>();
     }
 
+    //
     public Integer getPertainsToId() {
         return pertainsToId;
     }
-
     public void setPertainsToId(Integer pertainsToId) {
         this.pertainsToId = pertainsToId;
     }
-
-    public Integer getUserId() {
-        return userId;
+    public Map<Integer, Integer> getPapermarkToUser() {
+        return papermarkToUser;
     }
-
-    public void setUserId(Integer userId) {
-        this.userId = userId;
-    }
-
-    public Integer getPaperId() {
-        return paperId;
-    }
-
-    public void setPaperId(Integer paperId) {
-        this.paperId = paperId;
+    public void setPapermarkToUser(Map<Integer, Integer> papermarkToUser) {
+        this.papermarkToUser = papermarkToUser;
     }
 }

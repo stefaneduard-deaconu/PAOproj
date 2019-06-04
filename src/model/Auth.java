@@ -5,7 +5,7 @@ import java.util.List;
 public class Auth {
     List<User> users;
 
-    private static Auth ourInstance = new Auth(new DB());
+    private static Auth ourInstance = new Auth();
     public static Auth getInstance() {
         return ourInstance;
     }
@@ -13,7 +13,8 @@ public class Auth {
     public void addUser(User newUser) {
         users.add(newUser);
     }
-    private Auth(DB database) {
-        users = db.getUsers(); // load from JDBC
+
+    private Auth() {
+        // somehow read all the users
     }
 }
