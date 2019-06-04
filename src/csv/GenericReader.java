@@ -1,4 +1,4 @@
 package csv;
 
-public class GenericReader {
+public class GenericReader<T> {
 }
